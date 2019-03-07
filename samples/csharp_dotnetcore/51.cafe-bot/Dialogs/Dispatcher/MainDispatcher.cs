@@ -216,7 +216,7 @@ namespace Microsoft.BotBuilderSamples
                 JObject response;
                 try
                 {
-                    response = (JObject)queryProperty.ElementAtOrDefault(0).Value;
+                    JObject.Parse(queryProperty.ElementAtOrDefault(0).Value.ToString());
                 }
                 catch
                 {

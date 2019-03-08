@@ -232,7 +232,7 @@ namespace Microsoft.BotBuilderSamples
 
                 // Create a set a new onturn property
                 await _onTurnAccessor.SetAsync(context, OnTurnProperty.FromCardInput(response));
-                return await BeginDialogAsync(innerDc, response);
+                return await BeginChildDialogAsync(innerDc, OnTurnProperty.FromCardInput(response));
             }
 
             return await innerDc.BeginDialogAsync(WhatCanYouDo.Name);
